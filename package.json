@@ -3,22 +3,48 @@
   "version": "1.0.0",
   "description": "Transcodarr automatically converts your video recordings and organizes your media.",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=25.0.0"
+  },
   "bugs": "https://github.com/mdpauley/transcodarr/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/mdpauley/transcodarr.git"
   },
-  "author": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "mdpauley",
+    "email": "mdpauley@gmail.com",
+    "url": "https://mdpauley.com"
   },
-  "keywords": [],
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "clean": "rm -rf dist coverage",
+  },
+  "keywords": [
+    "transcoding",
+    "ffmpeg",
+    "media",
+    "organizer",
+    "mp4box",
+    "comskip",
+    "ccextractor",
+    "atomicparsley",
+    "gpac"
+  ],
   "license": "ISC",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.21.0",
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-packagejson": "^2.5.19"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.1",
+    "ffmpeg-ffprobe-static": "6.1.2-rc.1",
+    "gpac-js": "^12.19.7"
   }
 }
